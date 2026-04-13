@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - G-PDF</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+    <nav class="bg-white shadow-sm sticky top-0 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="/" class="flex-shrink-0 flex items-center gap-1 text-2xl font-black">
+                    <span class="text-red-600">G</span><span class="text-gray-900">-PDF</span>
+                </a>
+                <div class="flex space-x-6">
+                    <a href="/" class="text-gray-500 hover:text-red-600 font-medium">Home</a>
+                    <a href="/about" class="text-gray-500 hover:text-red-600 font-medium">About</a>
+                    <a href="/contact" class="text-red-600 font-semibold">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-xl mx-auto mt-16 px-6 bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+        <h1 class="text-3xl font-extrabold mb-6 text-gray-900">Get in touch</h1>
+        <form class="space-y-4">
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Name</label>
+                <input type="text" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm border p-3 focus:border-red-500 focus:ring-red-500" placeholder="Your Name">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm border p-3 focus:border-red-500 focus:ring-red-500" placeholder="you@example.com">
+            </div>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Message</label>
+                <textarea rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm border p-3 focus:border-red-500 focus:ring-red-500" placeholder="How can we help?"></textarea>
+            </div>
+            <button type="button" class="w-full bg-red-600 text-white px-4 py-3 rounded-xl font-bold hover:bg-red-700 transition">
+                Send Message
+            </button>
+        </form>
+    </div>
+</body>
+</html>
