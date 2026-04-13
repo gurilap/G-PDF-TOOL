@@ -9,7 +9,15 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'public', 'index.html')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+if (!fs.existsSync(publicPath)) {
+  fs.mkdirSync(publicPath, { recursive: true });
+  try {
+    const htmlContent = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
+    fs.writeFileSync(path.join(publicPath, 'index.html'), htmlContent);
+  } catch(e) {
+      console.log("index.html template not found in root, ignoring copy.");
+  }
+}
 app.get('/about', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'about.html'));
 });
