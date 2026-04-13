@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-PDF - Every PDF tool you need</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50 border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="/" class="flex-shrink-0 flex items-center gap-1 text-2xl font-black tracking-tight">
+                    <span class="text-red-600">G</span><span class="text-gray-900">-PDF</span>
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="/" class="text-red-600 font-semibold">Home</a>
+                    <a href="/about" class="text-gray-500 hover:text-red-600 font-medium transition">About</a>
+                    <a href="/contact" class="text-gray-500 hover:text-red-600 font-medium transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="text-center py-16 px-4">
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 text-gray-900">
+            Every tool you need to work with PDFs
+        </h1>
+        <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+            100% free, secure, and easy to use. Merge, split, compress, and convert your documents in seconds.
+        </p>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div id="tools-container" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+        </div>
+    </div>
+
+    <script>
+        const tools = [
+            { name: "Merge PDF", desc: "Combine PDFs in the order you want with the easiest PDF merger available.", slug: "merge-pdf" },
+            { name: "Split PDF", desc: "Separate one page or a whole set for easy conversion into independent PDF files.", slug: "split-pdf" },
+            { name: "Compress PDF", desc: "Reduce file size while optimizing for maximal PDF quality.", slug: "compress-pdf" },
+            { name: "PDF to Word", desc: "Convert PDF files into easy to edit DOC and DOCX documents.", slug: "pdf-to-word" },
+            { name: "PDF to PowerPoint", desc: "Turn your PDF files into easy to edit PPT and PPTX slideshows.", slug: "pdf-to-powerpoint" },
+            { name: "PDF to Excel", desc: "Pull data straight from PDFs into Excel spreadsheets in seconds.", slug: "pdf-to-excel" },
+            { name: "Word to PDF", desc: "Make DOC and DOCX files easy to read by converting them to PDF.", slug: "word-to-pdf" },
+            { name: "Edit PDF", desc: "Add text, images, shapes or freehand annotations to a PDF.", slug: "edit-pdf" },
+            { name: "PDF to JPG", desc: "Convert each PDF page into a JPG or extract all images.", slug: "pdf-to-jpg" },
+            { name: "Protect PDF", desc: "Encrypt PDF documents to prevent unauthorized access.", slug: "protect-pdf" },
+            { name: "Unlock PDF", desc: "Remove PDF password security.", slug: "unlock-pdf" }
+        ];
+
+        const container = document.getElementById('tools-container');
+
+        tools.forEach(tool => {
+            const card = document.createElement('a');
+            card.href = `/tool/${tool.slug}`;
+            card.target = "_blank";
+            card.className = "group bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition duration-300 cursor-pointer hover:border-red-500 h-full flex flex-col";
+            
+            card.innerHTML = `
+                <div class="mb-4 text-red-500">
+                    <svg class="w-10 h-10 group-hover:scale-110 transition-transform duration-300" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-red-600">${tool.name}</h3>
+                <p class="text-sm text-gray-500 leading-relaxed flex-grow">${tool.desc}</p>
+            `;
+            container.appendChild(card);
+        });
+    </script>
+
+</body>
+</html>
